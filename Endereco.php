@@ -1,10 +1,6 @@
-<?php 
+<?php
     namespace PHP\Modelo;
-    require_once('Pessoa.php');
-    require_once('Endereco.php');
-    use PHP\Modelo\Pessoa;
-    use PHP\Modelo\Endereco;
-
+ 
     class Endereco{
         private string $logradouro;
         private int $numero;
@@ -13,18 +9,15 @@
         private string $estado;
         private string $pais;
         private string $cep;
-        protected Endereco $endereco;
-
+ 
         public function __construct(string $logradouro,
                                     int $numero,
                                     string $bairro,
                                     string $cidade,
                                     string $estado,
                                     string $pais,
-                                    string $cep,
-                                    float $salario,
-                                    Endereco $endereco
-        )                               
+                                    string $cep
+        )
         {
             $this->logradouro = $logradouro;
             $this->numero     = $numero;
@@ -34,15 +27,15 @@
             $this->pais       = $pais;
             $this->cep        = $cep;
         }//fim do método construtor
-
+ 
         public function __get(string $campo):mixed{
             return $this->campo;
         }//fim do get
-
+ 
         public function __set(string $campo, string $valor):void{
             $this->campo = $valor;
         }//fim do set
-
+ 
         public function imprimir():string{
             return "<br>Logradouro: ".$this->logradouro.
                    "<br>Número: ".$this->numero.
